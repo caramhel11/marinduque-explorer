@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student-made demonstration guide to places and culture in Marinduque.">
+  <title>Marinduque Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#home">Marinduque Explorer</a>
+      <nav aria-label="Main navigation">
+        <a href="#discover">Discover</a>
+        <a href="#my-trip">My Trip (<span id="nav-trip-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Explore our island</p>
+        <h1 id="hero-title">Find places to explore in Marinduque.</h1>
+        <p class="hero-text">Browse a few sample destinations and cultural spots. Choose the places you like and keep them in a simple trip list.</p>
+        <a class="primary-button" href="#discover">Explore places</a>
+        <p class="demo-note">Student project · Demonstration content only</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <span class="hero-emoji">🌴</span>
+        <p>Small island, many stories</p>
+        <span class="hero-subtitle">MARINDUQUE, PHILIPPINES</span>
+      </div>
+    </section>
+
+    <section class="container section" id="discover" aria-labelledby="discover-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Choose your next stop</p>
+          <h2 id="discover-title">Explore places</h2>
+          <p>Search by name or location, or use a category to narrow the list.</p>
+        </div>
+        <p class="results-count" id="results-count">6 places</p>
+      </div>
+
+      <div class="search-and-filters">
+        <div class="search-box">
+          <label for="place-search">Search places</label>
+          <div class="search-row">
+            <input id="place-search" type="search" placeholder="Try beach or Boac" autocomplete="off">
+            <button id="clear-search" type="button" hidden>Clear</button>
+          </div>
+        </div>
+        <div class="filters">
+          <p class="filter-label" id="filter-label">Filter by category</p>
+          <div class="filter-buttons" role="group" aria-labelledby="filter-label">
+            <button class="filter-button active" type="button" data-category="All" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-category="Beach" aria-pressed="false">Beach</button>
+            <button class="filter-button" type="button" data-category="Heritage" aria-pressed="false">Heritage</button>
+            <button class="filter-button" type="button" data-category="Island" aria-pressed="false">Island</button>
+            <button class="filter-button" type="button" data-category="Nature" aria-pressed="false">Nature</button>
+            <button class="filter-button" type="button" data-category="Culture" aria-pressed="false">Culture</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="screen-reader-only" id="search-status" role="status" aria-live="polite"></p>
+      <div class="place-grid" id="place-grid"></div>
+
+      <div class="no-results" id="no-results" hidden>
+        <h3>No places found</h3>
+        <p>Try another search or reset the filters.</p>
+        <button class="secondary-button" id="reset-discovery" type="button">Reset filters</button>
+      </div>
+    </section>
+
+    <section class="trip-section" id="my-trip" aria-labelledby="trip-title">
+      <div class="container trip-layout">
+        <div>
+          <p class="eyebrow">Save your ideas</p>
+          <h2 id="trip-title">My trip list</h2>
+          <p class="trip-description">Add places from the guide and they will appear here. This list is temporary and will clear when the page is refreshed.</p>
+          <p class="trip-summary" id="trip-summary">No places saved yet.</p>
+          <button class="text-button" id="clear-trip" type="button" disabled>Clear my trip</button>
+        </div>
+        <div class="trip-list-panel">
+          <h3>Saved places <span id="trip-count-label">0 saved</span></h3>
+          <div class="trip-list" id="trip-list" role="list">
+            <div class="trip-empty" id="trip-empty" role="listitem">
+              <p>Your saved places will appear here.</p>
+              <a href="#discover">Browse places</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container information" aria-labelledby="information-title">
+      <h2 id="information-title">Before you go</h2>
+      <p>This is a classroom prototype with sample descriptions. It does not show live schedules, prices, alerts, or booking information. Please check current details with reliable local sources before making real travel plans.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Marinduque Explorer · Web Systems and Technologies activity</p>
+      <a href="#home">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

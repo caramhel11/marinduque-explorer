@@ -1,0 +1,116 @@
+/* Simple styles for the Marinduque Explorer student project. */
+:root {
+  --green: #245b4d;
+  --dark-green: #183d34;
+  --light-green: #e7f0e8;
+  --cream: #fbf8f0;
+  --text: #263a33;
+  --muted: #596e64;
+  --border: #dce5dc;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--cream); color: var(--text); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #bd713b; outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.container { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+.screen-reader-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; top: -60px; left: 12px; z-index: 10; padding: 10px 14px; background: white; color: var(--dark-green); }
+.skip-link:focus { top: 12px; }
+
+/* Header and navigation */
+.site-header { background: white; border-bottom: 1px solid var(--border); }
+.header-content, .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 68px; }
+.brand { color: var(--dark-green); font-size: 19px; font-weight: bold; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 18px; }
+nav a, .footer-content a { color: var(--green); font-size: 14px; font-weight: bold; text-decoration: none; }
+nav a:hover, .footer-content a:hover { text-decoration: underline; }
+
+/* Intro section */
+.hero { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px; padding-top: 62px; padding-bottom: 62px; }
+.eyebrow { margin-bottom: 8px; color: var(--green); font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 600px; margin-bottom: 16px; color: var(--dark-green); font-family: Georgia, "Times New Roman", serif; font-size: 52px; line-height: 1.1; }
+.hero-text { max-width: 540px; color: var(--muted); }
+.primary-button { display: inline-block; margin-top: 8px; padding: 11px 16px; border-radius: 6px; background: var(--green); color: white; font-size: 14px; font-weight: bold; text-decoration: none; }
+.primary-button:hover { background: var(--dark-green); }
+.demo-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+.hero-card { display: flex; min-height: 245px; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border: 1px solid #d9e5d6; border-radius: 14px; background: var(--light-green); text-align: center; }
+.hero-emoji { font-size: 66px; }
+.hero-card p { margin: 10px 0 4px; color: var(--dark-green); font-family: Georgia, "Times New Roman", serif; font-size: 23px; }
+.hero-subtitle { color: var(--muted); font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+
+/* Search, filters, and place cards */
+.section { padding-top: 38px; padding-bottom: 72px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+h2 { margin-bottom: 8px; color: var(--dark-green); font-family: Georgia, "Times New Roman", serif; font-size: 36px; line-height: 1.2; }
+.section-heading p:not(.eyebrow) { margin-bottom: 0; color: var(--muted); }
+.results-count { padding: 6px 12px; border: 1px solid var(--border); border-radius: 20px; color: var(--green); font-size: 13px; white-space: nowrap; }
+.search-and-filters { display: grid; grid-template-columns: minmax(220px, 1fr) 2fr; gap: 24px; margin-bottom: 24px; padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: white; }
+.search-box label, .filter-label { display: block; margin-bottom: 8px; color: var(--dark-green); font-size: 13px; font-weight: bold; }
+.search-row { display: flex; gap: 8px; }
+.search-row input { width: 100%; min-width: 0; padding: 10px; border: 1px solid #b9cbbd; border-radius: 6px; }
+.search-row button, .secondary-button { padding: 9px 12px; border: 1px solid #b9cbbd; border-radius: 6px; background: white; color: var(--green); }
+.filter-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter-button { padding: 8px 12px; border: 1px solid #b9cbbd; border-radius: 20px; background: white; color: var(--green); font-size: 13px; }
+.filter-button.active, .filter-button:hover { background: var(--green); color: white; }
+.place-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.place-card { display: flex; min-width: 0; flex-direction: column; padding: 18px; border: 1px solid var(--border); border-radius: 10px; background: white; }
+.place-icon { display: grid; width: 54px; height: 54px; place-items: center; margin-bottom: 12px; border-radius: 10px; background: var(--light-green); font-size: 29px; }
+.place-category { margin-bottom: 4px; color: var(--green); font-size: 12px; font-weight: bold; text-transform: uppercase; }
+.place-card h3 { margin-bottom: 6px; color: var(--dark-green); font-size: 20px; }
+.place-location { margin-bottom: 10px; color: var(--muted); font-size: 13px; }
+.place-description { flex-grow: 1; color: var(--muted); font-size: 14px; }
+.save-button, .remove-button { padding: 9px 12px; border: 1px solid var(--green); border-radius: 6px; background: white; color: var(--green); font-size: 13px; font-weight: bold; }
+.save-button:hover, .save-button[aria-pressed="true"] { background: var(--green); color: white; }
+.no-results { padding: 28px; border: 1px dashed #a6b9aa; border-radius: 10px; background: white; text-align: center; }
+.no-results p { color: var(--muted); }
+
+/* Saved trip list */
+.trip-section { padding: 52px 0; background: var(--light-green); }
+.trip-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; align-items: start; }
+.trip-description { max-width: 420px; color: var(--muted); }
+.trip-summary { color: var(--dark-green); font-weight: bold; }
+.text-button { padding: 0; border: 0; background: transparent; color: var(--green); font-weight: bold; text-decoration: underline; }
+.text-button:disabled { color: #68796f; cursor: not-allowed; }
+.trip-list-panel { padding: 20px; border: 1px solid var(--border); border-radius: 10px; background: white; }
+.trip-list-panel h3 { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.trip-list-panel h3 span { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.trip-empty { padding: 16px 0; color: var(--muted); text-align: center; }
+.trip-empty a { color: var(--green); font-weight: bold; }
+.trip-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.trip-item:last-child { border-bottom: 0; }
+.trip-item p { margin: 0; }
+.trip-item-name { color: var(--dark-green); font-weight: bold; }
+.trip-item-location { color: var(--muted); font-size: 12px; }
+
+/* Note and footer */
+.information { padding-top: 36px; padding-bottom: 36px; }
+.information h2 { font-size: 25px; }
+.information p { max-width: 780px; margin-bottom: 0; color: var(--muted); font-size: 14px; }
+.site-footer { border-top: 1px solid var(--border); background: white; }
+.footer-content p { margin: 0; color: var(--muted); font-size: 12px; }
+
+/* Smaller screens */
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr 0.8fr; gap: 24px; }
+  .search-and-filters { grid-template-columns: 1fr; }
+  .place-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .container { width: calc(100% - 32px); }
+  .header-content, .footer-content { flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+  .brand { font-size: 17px; }
+  nav { gap: 12px; }
+  .hero { grid-template-columns: 1fr; padding-top: 42px; padding-bottom: 42px; }
+  .hero-card { min-height: 180px; }
+  h1 { font-size: 38px; }
+  .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .search-and-filters { padding: 14px; }
+  .place-grid { grid-template-columns: 1fr; }
+  .trip-layout { grid-template-columns: 1fr; gap: 20px; }
+}
